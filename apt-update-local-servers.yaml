@@ -20,17 +20,17 @@
 #      ignore_errors: yes
 
     # 4. Update apt cache
-#    - name: Update apt cache
-#      apt:
-#        update_cache: yes
-#        lock_timeout: 120
+    - name: Update apt cache
+      apt:
+        update_cache: yes
+        lock_timeout: 120
 
     # 5. Upgrade all packages except wazuh-agent
-#    - name: Upgrade all packages except wazuh-agent
-#      apt:
-#        upgrade: dist
-#        state: latest
-#        lock_timeout: 120
-#        force: yes
+    - name: Upgrade all packages
+      apt:
+        upgrade: dist
+        state: latest
+        lock_timeout: 120
+        force: yes
 #      vars:
 #        ansible_apt_excludes: "wazuh-agent"
