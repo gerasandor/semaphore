@@ -22,9 +22,9 @@
       command: uptime
       register: system_uptime
 
-    - name: Collect running processes
-      command: 'ps aux --sort=-%mem | head -10'
-      register: top_processes
+#    - name: Collect running processes
+#      command: 'ps aux --sort=-%mem | head -10'
+#      register: top_processes
 
     - name: Prepare email body
       set_fact:
@@ -45,9 +45,9 @@
           ====================================
           Uptime:
           {{ system_uptime.stdout }}
-          ====================================
-          Top Processes:
-          {{ top_processes.stdout }}
+ #         ====================================
+ #         Top Processes:
+ #         {{ top_processes.stdout }}
 
     - name: Send system report via email
       mail:
