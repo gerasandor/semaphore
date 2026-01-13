@@ -23,7 +23,7 @@
       register: system_uptime
 
     - name: Collect running processes
-      command: ps aux --sort=-%mem | head -10
+      command: 'ps aux --sort=-%mem | head -10'
       register: top_processes
 
     - name: Prepare email body
